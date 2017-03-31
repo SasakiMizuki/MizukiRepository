@@ -1,0 +1,30 @@
+﻿  3DObject.cpp
+  billboard.cpp
+  camera.cpp
+camera.cpp(129): warning C4244: '引数': 'double' から 'FLOAT' への変換です。データが失われる可能性があります。
+  Debug.cpp
+  effect.cpp
+  Ending.cpp
+  explosion.cpp
+  Fade.cpp
+  field.cpp
+  input.cpp
+  Item.cpp
+Item.cpp(169): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+  light.cpp
+  main.cpp
+  Message.cpp
+  model.cpp
+model.cpp(22): warning C4305: '初期化中': 'double' から 'float' へ切り詰めます。
+model.cpp(169): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+model.cpp(170): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+  Object.cpp
+  shadow.cpp
+  Sky.cpp
+Sky.cpp(19): warning C4305: '初期化中': 'double' から 'float' へ切り詰めます。
+  sound.cpp
+  Title.cpp
+  コード生成しています。
+  All 425 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  コード生成が終了しました。
+  DX22_base00.vcxproj -> C:\Users\yawar\Desktop\提出作品\DX22_0216\Release\DX22_base00.exe
