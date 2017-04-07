@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CB565E02-DFB0-46DA-9343-67AA7FE0AEAD}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>DirectXBase</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>D:\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>false</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\Billboard.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\C2DObj.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\C3DObj.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\Camera.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\Debug.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\Enemy.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\Fade.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\Fire.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\GameScene.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\GameWnd.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\Graphics.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\HierarMesh.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\Input.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\Jintai.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\Land.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\Main.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\Mesh.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\MeshObj.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\MyHierarchy.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\ObjectBase.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\ObjectManager.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\Particle.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\Player.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\PlayerHP.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\SceneBase.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\SceneManager.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\Sky.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\Sword.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\Tree.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\TreeManager.cpp" />
+    <ClCompile Include="..\..\GameBase_DirectX\DX9Game\Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\Billboard.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\C2DObj.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\C3DObj.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\Camera.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\Debug.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\define.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\Enemy.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\Fade.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\Fire.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\GameScene.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\GameWnd.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\Graphics.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\HierarMesh.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\Input.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\Jintai.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\Land.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\Mesh.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\MeshObj.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\MyHierarchy.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\ObjectBase.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\ObjectManager.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\Particle.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\Player.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\PlayerHP.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\SceneBase.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\SceneManager.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\Sky.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\Sword.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\Tree.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\TreeManager.h" />
+    <ClInclude Include="..\..\GameBase_DirectX\DX9Game\Window.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
