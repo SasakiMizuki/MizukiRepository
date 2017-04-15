@@ -10,14 +10,12 @@ ExportedObj/
 *.csproj
 *.unityproj
 *.sln
-*.suo
 *.tmp
 *.user
 *.userprefs
 *.pidb
 *.booproj
 *.svd
-*.VC.bd
 
 
 # Unity3D generated meta files
@@ -30,3 +28,6 @@ sysinfo.txt
 *.apk
 *.unitypackage
 Assets/Movie.meta
+
+*.suo
+*.VC.db

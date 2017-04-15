@@ -12,7 +12,7 @@ CBillboard::~CBillboard() {
 }
 
 void CBillboard::Init() {
-	D3DXCreateTextureFromFile(CGraphics::GetDevice(), (LPCSTR)m_pszTexName, &m_pTexture);
+	D3DXCreateTextureFromFile(CGraphics::GetDevice(), (LPCWSTR)m_pszTexName, &m_pTexture);
 
 	m_pCamera = (CCamera*)Find(ID_CAMERA);
 
