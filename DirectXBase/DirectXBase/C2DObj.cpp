@@ -35,7 +35,7 @@ CObjectBase* C2DObj::Find(UINT uID, CObjectBase* p) {
 
 void C2DObj::Init() {
 	MakeVertexPolygon();
-	D3DXCreateTextureFromFile(CGraphics::GetDevice(), (LPCSTR)m_pszTexName, &m_pTexture);
+	D3DXCreateTextureFromFile(CGraphics::GetDevice(), (LPCWSTR)m_pszTexName, &m_pTexture);
 
 }
 
