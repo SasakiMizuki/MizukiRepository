@@ -94,7 +94,7 @@ public:
 
 	virtual void Init();
 	virtual void Update();
-	virtual void Draw();
+	virtual void Draw(CShader* pShader = NULL);
 	virtual void DrawAlpha();
 	void AddDebugStr(LPTSTR pszMsg);
 

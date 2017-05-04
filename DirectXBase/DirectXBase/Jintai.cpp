@@ -485,7 +485,7 @@ void CJintai::Update()
 }
 
 // •`‰æ
-void CJintai::Draw()
+void CJintai::Draw(CShader* pShader)
 {
 	for (int i = 0; i < MAX_PARTS; ++i) {
 		if (m_bEdit && i == m_nParts && (m_dwBlink & 8) == 0) {
