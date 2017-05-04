@@ -96,7 +96,7 @@ void CHierarMesh::Finalize()
 //---------------------------------------------------------------------------------------
 // メッシュ描画
 //---------------------------------------------------------------------------------------
-void CHierarMesh::Draw(D3DXMATRIX& world)
+void CHierarMesh::Draw(D3DXMATRIX& world, CShader* pShader)
 {
 	// アニメーション更新
 	if (m_pAnimCtrl) {
