@@ -49,7 +49,7 @@ public:
 	CGameScene* Create(CGraphics* pGraph);
 	void Release();
 	void Render();
-	void Update();
+	//void Update();
 	void SetFPS(int nFPS) {m_FPS = nFPS;}
 	void AddDebugStr(LPCTSTR psz) {lstrcat(m_szDebug, psz);}
 
@@ -59,13 +59,13 @@ public:
 	void InitObj();
 	void FinObj();
 	void UpdateObj();
-	void DrawObj();
+	//void DrawObj();
 	DWORD GetTick();
 
 private:
 	bool Initialize(CGraphics* pGraph);
 	void Finalize();
-	void Draw();
+	//void Draw();
 };
 
 //=======================================================================================
