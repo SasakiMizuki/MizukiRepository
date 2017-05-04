@@ -8,6 +8,7 @@
 #include <tchar.h>			// 汎用テキスト マッピング
 #include <d3d9.h>			// DirectX Graphics 関連のヘッダ
 #include <d3dx9.h>			// DirectX Graphics 関連のヘッダ
+#include "Shader.h"
 // 頂点フォーマット
 struct MVERTEX
 {
@@ -57,7 +58,7 @@ public:
 	virtual ~CMesh();						// デストラクタ
 	virtual bool Initialize(LPCTSTR pszFName, bool bReverse = false);	// メッシュ初期化
 	virtual void Finalize();						// メッシュ解放
-	virtual void Draw(D3DXMATRIX& world);			// メッシュ描画
+	virtual void Draw(D3DXMATRIX& world, CShader* pShader);	// メッシュ描画
 	virtual void DrawNoAlpha(D3DXMATRIX& world);	// 不透明部分描画
 	virtual void DrawAlpha(D3DXMATRIX& world);		// 半透明部分描画
 	virtual D3DXVECTOR3& GetBBox() {return m_vBBox;}

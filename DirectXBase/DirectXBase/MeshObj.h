@@ -15,7 +15,7 @@ public:
 
 	virtual void Init();		// 初期化
 	virtual void Update();		// 更新
-	virtual void Draw();		// 表示
+	virtual void Draw(CShader* pShader = NULL);		// 表示
 	virtual void Fin();			// 終了処理
 	virtual void SetMesh(CMesh* pMesh);
 	CMesh* GetMesh() {return m_pMesh;}

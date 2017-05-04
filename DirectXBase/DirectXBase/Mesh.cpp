@@ -298,12 +298,27 @@ void CMesh::Finalize()
 //---------------------------------------------------------------------------------------
 // ƒƒbƒVƒ…•`‰æ
 //---------------------------------------------------------------------------------------
-void CMesh::Draw(D3DXMATRIX& world)
+void CMesh::Draw(D3DXMATRIX& world, CShader* pShader)
 {
 //	if (m_dwTime) {
 //		DrawPiece();
 //		return;
 //	}
+
+	UINT uPass;
+	if (pShader && (uPass = pShader->Begin()) > 0) {
+		pShader->SetWorldMatrix(&world);
+		for (UINT u = 0; u < uPass; u++) {
+			pShader->BeginPass(u);
+			for (DWORD i = 0; i < m_dwNumMaterial; i++) {
+				pShader->SetMaterial(&m_pMaterial[i]);
+				pShader->SetTexture(m_ppTexture[i]);
+				pShader->Commit();
+				m_pD3DMesh->DrawSubset(i);
+			}
+			pShader->EndPass();
+		}
+	}
 
 	DrawNoAlpha(world);
 	LPDIRECT3DDEVICE9 pD = CGraphics::GetDevice();

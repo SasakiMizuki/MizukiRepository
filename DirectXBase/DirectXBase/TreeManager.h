@@ -14,6 +14,6 @@ public:
 	virtual ~CTreeManager();
 	void Init();
 	void Fin();
-	void Draw();
+	void Draw(CShader* pShader = NULL);
 };
 

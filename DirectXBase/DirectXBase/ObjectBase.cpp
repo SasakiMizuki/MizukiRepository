@@ -29,7 +29,7 @@ void CObjectBase::PostUpdate() {
 void CObjectBase::PreDraw() {
 }
 
-void CObjectBase::Draw() {
+void CObjectBase::Draw(CShader* pShader) {
 
 }
 

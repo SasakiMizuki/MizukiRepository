@@ -36,8 +36,8 @@ void CTreeManager::Fin() {
 	}
 }
 
-void CTreeManager::Draw() {
+void CTreeManager::Draw(CShader* pShader) {
 	for (unsigned int i = 0; i < vecTree.size(); i++) {
-		vecTree[i].Draw();
+		vecTree[i].Draw(pShader);
 	}
 }
