@@ -8,7 +8,7 @@
 #include <d3d9.h>
 #include <d3dx9.h>
 #include <tchar.h>
-
+#include "Shader.h"
 #include "Debug.h"
 
 #define FOVY			45.0f					// 視野角
@@ -25,6 +25,7 @@ private:
 
 	D3DXMATRIX					m_MatView;		// ビュー マトリックス
 	D3DXMATRIX					m_MatProj;		// 射影マトリックス
+	D3DLIGHT9					m_Light;
 
 	HWND						m_hWnd;			// ウィンドウ ハンドル
 	int							m_nWidth;		// 表示領域幅
@@ -39,6 +40,10 @@ public:
 	void End();
 	void SwapBuffer();
 	void DrawText(int nX, int nY, LPCTSTR psz);
+	D3DXMATRIX& GetViewMatrix() { return m_MatView; }
+	D3DXMATRIX& GetProjMatrix() { return m_MatProj; }
+	//D3DXVECTOR3& GetCameraPos() { return m_vCamera; }
+	D3DLIGHT9& GetLight() { return m_Light; }
 
 private:
 	bool Initialize(HWND hWnd, int nWidth, int nHeight, bool bWindow);

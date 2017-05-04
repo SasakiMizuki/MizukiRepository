@@ -123,6 +123,12 @@
     <ClCompile Include="Enemy.cpp">
       <Filter>ソース ファイル\GameMain</Filter>
     </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderTarget.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Billboard.h">
@@ -219,6 +225,12 @@
       <Filter>ヘッダー ファイル\GameMain</Filter>
     </ClInclude>
     <ClInclude Include="Window.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderTarget.h">
       <Filter>ヘッダー ファイル\Base</Filter>
     </ClInclude>
   </ItemGroup>

@@ -177,8 +177,10 @@
     <ClCompile Include="Particle.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerHP.cpp" />
+    <ClCompile Include="RenderTarget.cpp" />
     <ClCompile Include="SceneBase.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Sky.cpp" />
     <ClCompile Include="Sword.cpp" />
     <ClCompile Include="Tree.cpp" />
@@ -211,8 +213,10 @@
     <ClInclude Include="Particle.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerHP.h" />
+    <ClInclude Include="RenderTarget.h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="Shader.h" />
     <ClInclude Include="Sky.h" />
     <ClInclude Include="Sword.h" />
     <ClInclude Include="Tree.h" />

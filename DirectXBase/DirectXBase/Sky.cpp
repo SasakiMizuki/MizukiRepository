@@ -67,7 +67,7 @@ void CSky::PreDraw()
 }
 
 // •`‰æ
-void CSky::Draw()
+void CSky::Draw(CShader* pShader)
 {
 	// ‰½‚à‚µ‚È‚¢
 }

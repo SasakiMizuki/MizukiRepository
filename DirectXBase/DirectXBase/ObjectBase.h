@@ -49,7 +49,7 @@ public:
 	virtual void Update();
 	virtual void PostUpdate();
 	virtual void PreDraw();
-	virtual void Draw();
+	virtual void Draw(CShader* pShader);
 	virtual void DrawAlpha();	// ”¼“§–¾•\Ž¦
 	virtual void Fin();
 

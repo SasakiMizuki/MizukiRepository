@@ -27,10 +27,10 @@ void CMeshObj::Update()
 }
 
 // •\Ž¦
-void CMeshObj::Draw()
+void CMeshObj::Draw(CShader* pShader)
 {
 	if (m_pMesh) {
-		m_pMesh->Draw(m_world);
+		m_pMesh->Draw(m_world, pShader);
 	}
 }
 

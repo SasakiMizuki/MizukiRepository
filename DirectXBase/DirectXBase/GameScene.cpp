@@ -65,52 +65,52 @@ void CGameScene::UpdateObj()
 }
 
 // 全オブジェクト描画
-void CGameScene::DrawObj()
-{
-	//m_pCamera->PreDraw();		// カメラ反映
-
-	// 不透明部分描画
-	auto Iterator = m_mObj.begin();
-	for (; Iterator != m_mObj.end(); ++Iterator) {
-		if (Iterator->second == NULL) {
-			continue;
-		}
-		if (Iterator->second->GetDamage() && (m_dwTick & 8)) {
-			continue;
-		}
-		Iterator->second->PreDraw();
-	}
-
-	Iterator = m_mObj.begin();
-	for (; Iterator != m_mObj.end(); ++Iterator) {
-		if (Iterator->second == NULL) {
-			continue;
-		}
-		if (Iterator->second->GetDamage() && (m_dwTick & 8)) {
-			continue;
-		}
-		Iterator->second->Draw();
-	}
-
-	// 半透明部分描画
-	LPDIRECT3DDEVICE9 pD = CGraphics::GetDevice();
-	pD->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
-	pD->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
-	pD->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
-	pD->SetRenderState(D3DRS_ZWRITEENABLE, FALSE);
-	Iterator = m_mObj.begin();
-	for (; Iterator != m_mObj.end(); ++Iterator) {
-		if (Iterator->second == NULL) {
-			continue;
-		}
-		if (Iterator->second->GetDamage() && (m_dwTick & 8)) {
-			continue;
-		}
-		Iterator->second->DrawAlpha();
-	}
-	pD->SetRenderState(D3DRS_ZWRITEENABLE, TRUE);
-	pD->SetRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
-}
+//void CGameScene::DrawObj()
+//{
+//	//m_pCamera->PreDraw();		// カメラ反映
+//
+//	// 不透明部分描画
+//	auto Iterator = m_mObj.begin();
+//	for (; Iterator != m_mObj.end(); ++Iterator) {
+//		if (Iterator->second == NULL) {
+//			continue;
+//		}
+//		if (Iterator->second->GetDamage() && (m_dwTick & 8)) {
+//			continue;
+//		}
+//		Iterator->second->PreDraw();
+//	}
+//
+//	Iterator = m_mObj.begin();
+//	for (; Iterator != m_mObj.end(); ++Iterator) {
+//		if (Iterator->second == NULL) {
+//			continue;
+//		}
+//		if (Iterator->second->GetDamage() && (m_dwTick & 8)) {
+//			continue;
+//		}
+//		Iterator->second->Draw(&m_shader);
+//	}
+//
+//	// 半透明部分描画
+//	LPDIRECT3DDEVICE9 pD = CGraphics::GetDevice();
+//	pD->SetRenderState(D3DRS_ALPHABLENDENABLE, TRUE);
+//	pD->SetRenderState(D3DRS_SRCBLEND, D3DBLEND_SRCALPHA);
+//	pD->SetRenderState(D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
+//	pD->SetRenderState(D3DRS_ZWRITEENABLE, FALSE);
+//	Iterator = m_mObj.begin();
+//	for (; Iterator != m_mObj.end(); ++Iterator) {
+//		if (Iterator->second == NULL) {
+//			continue;
+//		}
+//		if (Iterator->second->GetDamage() && (m_dwTick & 8)) {
+//			continue;
+//		}
+//		Iterator->second->DrawAlpha();
+//	}
+//	pD->SetRenderState(D3DRS_ZWRITEENABLE, TRUE);
+//	pD->SetRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
+//}
 
 //---------------------------------------------------------------------------------------
 // コンストラクタ
@@ -129,8 +129,6 @@ CGameScene::CGameScene()
 	new CLand(this);
 	new CPlayerHP(this);
 	new CTreeManager(this);
-	//m_pParticle = new CParticle(this);
-	//m_pTree = new CTree(this, D3DXVECTOR3(0.0f, 0.0f, 0.0f));
 }
 
 //---------------------------------------------------------------------------------------
@@ -138,18 +136,7 @@ CGameScene::CGameScene()
 //---------------------------------------------------------------------------------------
 CGameScene::~CGameScene()
 {
-	//SAFE_DELETE(m_pFade);
-	//SAFE_DELETE(m_pPlayer);
-	//SAFE_DELETE(m_pSword);
-	//SAFE_DELETE(m_pSky);
-	//SAFE_DELETE(m_pCamera);
-	//SAFE_DELETE(m_pLand);
-	//SAFE_DELETE(m_pEnemy);
-	//SAFE_DELETE(m_pPlayerHP);
-	//SAFE_DELETE(m_pTreeManager);
 	m_mObj.clear();
-	//delete m_pParticle;
-	//delete m_pTree;
 }
 
 //---------------------------------------------------------------------------------------
@@ -172,10 +159,13 @@ CGameScene* CGameScene::Create(CGraphics* pGraph)
 //---------------------------------------------------------------------------------------
 bool CGameScene::Initialize(CGraphics* pGraph)
 {
+	m_pGraph = pGraph;
+	m_target.Init();
 	CJintai::LoadMesh();
 	//-------- ゲーム用オブジェクトの初期化
 	InitObj();
 
+	m_shader.Load(_T("../data/shader/Toon.fx"));
 	return true;
 }
 
@@ -186,6 +176,7 @@ void CGameScene::Finalize()
 {
 	//-------- ゲーム用オブジェクトの後始末
 	//SAFE_DELETE(m_pScene);
+	m_shader.Release();
 	FinObj();
 }
 
@@ -212,56 +203,56 @@ void CGameScene::Render()
 	m_pGraph->SwapBuffer();		// バックバッファ入替
 }
 
-//---------------------------------------------------------------------------------------
-// ゲームメイン処理（メインループからコールされる）
-//---------------------------------------------------------------------------------------
-void CGameScene::Update()
-{
-	++m_dwTick;
-
-	// 入力更新
-	CInput::Update();
-
-
-	//----- ここにゲーム本体処理
-		UpdateObj();
-
-		/*if (CInput::GetKeyPress(DIK_F1)) {
-			m_pPlayer->ChangeHP(-1000);
-		}
-		if (CInput::GetKeyPress(DIK_F2)) {
-			m_pEnemy->ChangeHP(-1000);
-		}
-
-		if (!m_bSceneChange && (m_pPlayer->GetHP() <= 0.0f || m_pEnemy->GetHP() <= 0.0f)){
-			m_bSceneChange = true;
-			m_pFade->Start(FADEOUT);
-		}
-		if (m_bSceneChange && !m_pFade->GetDoingFade() && m_pEnemy->GetHP() <= 0.0f) {
-			CSceneManager::Instance()->ChangeScene(Scene_End);
-		} else if (m_bSceneChange && !m_pFade->GetDoingFade() && m_pPlayer->GetHP() <= 0.0f){
-			CSceneManager::Instance()->ChangeScene(Scene_GameOver);	
-		}*/
-}
-
-//---------------------------------------------------------------------------------------
-// 描画処理（CGraphics::Render() からコールされる）
-//---------------------------------------------------------------------------------------
-void CGameScene::Draw()
-{
-	m_szDebug[0] = _T('\0');	// デバッグ文字列初期化
-
-	// FPS を画面に描画するための文字列を作成
-	TCHAR	str[256];
-	_stprintf(str, _T("FPS = %d\n"), m_FPS);
-	lstrcat(m_szDebug, str);
-
-	//----- ここに描画処理
-	DrawObj();
-
-	// デバッグ文字列描画
-	m_pGraph->DrawText(0, 0, m_szDebug);
-}
+////---------------------------------------------------------------------------------------
+//// ゲームメイン処理（メインループからコールされる）
+////---------------------------------------------------------------------------------------
+//void CGameScene::Update()
+//{
+//	++m_dwTick;
+//
+//	// 入力更新
+//	CInput::Update();
+//
+//
+//	//----- ここにゲーム本体処理
+//		UpdateObj();
+//
+//		/*if (CInput::GetKeyPress(DIK_F1)) {
+//			m_pPlayer->ChangeHP(-1000);
+//		}
+//		if (CInput::GetKeyPress(DIK_F2)) {
+//			m_pEnemy->ChangeHP(-1000);
+//		}
+//
+//		if (!m_bSceneChange && (m_pPlayer->GetHP() <= 0.0f || m_pEnemy->GetHP() <= 0.0f)){
+//			m_bSceneChange = true;
+//			m_pFade->Start(FADEOUT);
+//		}
+//		if (m_bSceneChange && !m_pFade->GetDoingFade() && m_pEnemy->GetHP() <= 0.0f) {
+//			CSceneManager::Instance()->ChangeScene(Scene_End);
+//		} else if (m_bSceneChange && !m_pFade->GetDoingFade() && m_pPlayer->GetHP() <= 0.0f){
+//			CSceneManager::Instance()->ChangeScene(Scene_GameOver);	
+//		}*/
+//}
+//
+////---------------------------------------------------------------------------------------
+//// 描画処理（CGraphics::Render() からコールされる）
+////---------------------------------------------------------------------------------------
+//void CGameScene::Draw()
+//{
+//	m_szDebug[0] = _T('\0');	// デバッグ文字列初期化
+//
+//	// FPS を画面に描画するための文字列を作成
+//	TCHAR	str[256];
+//	_stprintf(str, _T("FPS = %d\n"), m_FPS);
+//	lstrcat(m_szDebug, str);
+//
+//	//----- ここに描画処理
+//	DrawObj();
+//
+//	// デバッグ文字列描画
+//	m_pGraph->DrawText(0, 0, m_szDebug);
+//}
 
 //=======================================================================================
 //	End of File
