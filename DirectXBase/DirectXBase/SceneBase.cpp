@@ -106,7 +106,6 @@ void CSceneBase::UpdateObj() {
 // 全オブジェクト描画
 void CSceneBase::DrawObj() {
 	//m_pCamera->PreDraw();		// カメラ反映
-
 	// 不透明部分描画
 	auto Iterator = m_mObj.begin();
 	for (; Iterator != m_mObj.end(); ++Iterator) {
@@ -116,7 +115,19 @@ void CSceneBase::DrawObj() {
 		if (Iterator->second->GetDamage() && (m_dwTick & 8)) {
 			continue;
 		}
-		Iterator->second->Draw();
+		Iterator->second->PreDraw();
+	}
+
+	Iterator = m_mObj.begin();
+	// 不透明部分描画
+	for (; Iterator != m_mObj.end(); ++Iterator) {
+		if (Iterator->second == NULL) {
+			continue;
+		}
+		if (Iterator->second->GetDamage() && (m_dwTick & 8)) {
+			continue;
+		}
+		Iterator->second->Draw(&m_shader);
 	}
 
 	// 半透明部分描画
@@ -238,6 +249,9 @@ void CSceneBase::Draw() {
 	lstrcat(m_szDebug, str);
 
 	//----- ここに描画処理
+	m_shader.SetViewMatrix(&m_pGraph->GetViewMatrix());
+	m_shader.SetProjMatrix(&m_pGraph->GetProjMatrix());
+	m_shader.SetLight(&m_pGraph->GetLight());
 	DrawObj();
 
 	// デバッグ文字列描画
