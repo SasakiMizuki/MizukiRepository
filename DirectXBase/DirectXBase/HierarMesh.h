@@ -27,7 +27,7 @@ public:
 	virtual ~CHierarMesh();						// デストラクタ
 	bool Initialize(LPCTSTR pszFName);		// メッシュ初期化
 	void Finalize();						// メッシュ解放
-	void Draw(D3DXMATRIX& world);			// メッシュ描画
+	void Draw(D3DXMATRIX& world, CShader* pShader = NULL);			// メッシュ描画
 	void SwitchAnimSet(UINT uAnimSet);		// アニメーション切替
 	void SetTime(double dTime);				// アニメーション開始時間設定
 
