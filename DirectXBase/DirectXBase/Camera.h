@@ -52,4 +52,5 @@ public:
 	void PreDraw();			// •`‰æ‘Oˆ—
 	D3DXMATRIX& GetView() { return m_view; }
 	D3DXMATRIX& GetProj() { return m_proj; }
+	D3DXVECTOR3& GetPos() { return m_pos; }
 };
