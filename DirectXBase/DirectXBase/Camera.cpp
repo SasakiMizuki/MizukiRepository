@@ -129,6 +129,8 @@ void CCamera::PostUpdate()
 		D3DXMatrixLookAtLH(&m_view,
 			&m_pos, &m_at, &m_up);
 		SetPos(m_pos);
+
+		CGraphics::SetCameraPos(m_pos);
 	}
 
 	D3DXMatrixPerspectiveFovLH(&m_proj, m_fFovy, m_fAspect, m_fZNear, m_fZFar);

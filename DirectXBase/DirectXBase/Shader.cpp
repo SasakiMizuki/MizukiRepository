@@ -154,6 +154,7 @@ UINT CShader::Begin() {
 	UINT uPass = 0;
 	if (SUCCEEDED(m_pFX->Begin(&uPass, 0)))
 		return uPass;
+	return 0;
 }
 
 void CShader::End() {

@@ -23,6 +23,7 @@ private:
 	D3DPRESENT_PARAMETERS		m_D3DPP;		// PRESENT PARAMETERS
 	LPD3DXFONT					m_pFont;		// D3DXFont オブジェクト
 
+	static D3DXVECTOR3			m_vCamera;
 	D3DXMATRIX					m_MatView;		// ビュー マトリックス
 	D3DXMATRIX					m_MatProj;		// 射影マトリックス
 	D3DLIGHT9					m_Light;
@@ -42,7 +43,8 @@ public:
 	void DrawText(int nX, int nY, LPCTSTR psz);
 	D3DXMATRIX& GetViewMatrix() { return m_MatView; }
 	D3DXMATRIX& GetProjMatrix() { return m_MatProj; }
-	//D3DXVECTOR3& GetCameraPos() { return m_vCamera; }
+	static void SetCameraPos(D3DXVECTOR3 vCamera) { m_vCamera = vCamera; };
+	D3DXVECTOR3& GetCameraPos() { return m_vCamera; }
 	D3DLIGHT9& GetLight() { return m_Light; }
 
 private:
