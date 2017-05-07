@@ -31,8 +31,8 @@ public class EstablishmentController : ObjectBase {
 	Color[] m_BlockColors = new Color[7];
 	[SerializeField]
 	GameObject m_deleteObj;
-	private List<int> m_NextList = new List<int>();
-	private List<int> m_DontNextList = new List<int>();
+	//private List<int> m_NextList = new List<int>();
+	//private List<int> m_DontNextList = new List<int>();
 
 	private int m_LoopCounter;      // 無限ループ防止用カウンター
 
@@ -63,7 +63,7 @@ public class EstablishmentController : ObjectBase {
 		//m_BlockColors[6] = new Color(1.0f, 0.5f, 1.0f);
 
 		var newObj = (Image)Instantiate(m_BlockImage);
-		newObj.transform.parent = m_BlockParent;
+		newObj.transform.SetParent(m_BlockParent);
 		newObj.rectTransform.anchoredPosition = new Vector3(0 + 1, 0, 0);
 		newObj.rectTransform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 		m_TotalExecuteNumber++;
@@ -123,6 +123,7 @@ public class EstablishmentController : ObjectBase {
 		Debug.Log("m_ConfirmEstablishA" + m_ConfirmEstablishA);
 	}
 
+    // 実行
 	public void OneExecute() {
 		int flagHeight;
 		flagHeight = 0;
@@ -151,7 +152,7 @@ public class EstablishmentController : ObjectBase {
 			}
 			if(Next && ( ( answer == 0 ? false : m_BlockSetFlag[answer - 1, flagHeight] ) || ( answer == MAX_WIDTH - 1 ? false : m_BlockSetFlag[answer + 1, flagHeight] ) )) {
 				var newObj = (Image)Instantiate(m_BlockImage);
-				newObj.transform.parent = m_BlockParent;
+				newObj.transform.SetParent(m_BlockParent);
 				newObj.rectTransform.anchoredPosition = new Vector3(answer - MAX_WIDTH_HALF + 1, flagHeight, 0);
 				newObj.rectTransform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 				m_TotalExecuteNumber++;
@@ -160,7 +161,7 @@ public class EstablishmentController : ObjectBase {
 				break;
 			} else if(!Next && !( answer == 0 ? false : m_BlockSetFlag[answer - 1, flagHeight] ) && !( answer == MAX_WIDTH - 1 ? false : m_BlockSetFlag[answer + 1, flagHeight] )) {
 				var newObj = (Image)Instantiate(m_BlockImage);
-				newObj.transform.parent = m_BlockParent;
+                newObj.transform.SetParent(m_BlockParent);
 				newObj.rectTransform.anchoredPosition = new Vector3(answer - MAX_WIDTH_HALF + 1, flagHeight, 0);
 				newObj.rectTransform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 				m_TotalExecuteNumber++;
@@ -168,12 +169,6 @@ public class EstablishmentController : ObjectBase {
 				m_BlockSetFlag[answer, flagHeight] = true;
 				break;
 			}else {
-				//FromZeroToOne = Random.Range(0.0f, 1.0f);
-				//if(m_EstablishA > FromZeroToOne) {
-				//	Next = true;
-				//} else {
-				//	Next = false;
-				//}
 				m_LoopCounter++;
 				answer = Random.Range(0,MAX_WIDTH);
 				flagHeight = 0;
@@ -181,6 +176,7 @@ public class EstablishmentController : ObjectBase {
 		}
 	}
 
+    // 100回実行
 	public void HandredExecute() {
 		if(m_isExecute)
 			return;
@@ -190,6 +186,7 @@ public class EstablishmentController : ObjectBase {
 		m_ExecuteNumber = 100;
 	}
 
+    // 10000回実行
 	public void TenThousandExecute() {
 		if(m_isExecute)
 			return;
@@ -243,9 +240,10 @@ public class EstablishmentController : ObjectBase {
 		StartCoroutine(takeScreenShot());
 	}
 
+    // スクリーンショット撮影
 	IEnumerator takeScreenShot() {
 		yield return new WaitForSeconds(0.1f);
-		Application.CaptureScreenshot("../Data/image.png");
+		Application.CaptureScreenshot("../Data/"+ System.DateTime.Now.ToString("yyyy-MMdd-HHmmss") +".png");
 		yield return new WaitForSeconds(0.1f);
 		m_deleteObj.SetActive(true);
 	}

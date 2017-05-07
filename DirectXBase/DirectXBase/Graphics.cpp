@@ -11,6 +11,7 @@
 #include "Debug.h"
 
 LPDIRECT3DDEVICE9	CGraphics::m_pDevice = NULL;		// Direct3DDevice9 オブジェクト
+D3DXVECTOR3			CGraphics::m_vCamera = D3DXVECTOR3(0,0,0);
 
 //---------------------------------------------------------------------------------------
 // グラフィック環境の初期化

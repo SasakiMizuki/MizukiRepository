@@ -15,7 +15,7 @@
 
 // シーンにオブジェクトを追加
 void CSceneBase::Add(CObjectBase* pObj) {
-	int i = 0;
+	UINT i = 0;
 	for (; i < m_mObj.size(); ++i) {
 		auto Iterator = m_mObj.find(i);
 		if (Iterator == m_mObj.end())
@@ -249,6 +249,7 @@ void CSceneBase::Draw() {
 	lstrcat(m_szDebug, str);
 
 	//----- ここに描画処理
+	m_shader.SetCamera(&m_pGraph->GetCameraPos());
 	m_shader.SetViewMatrix(&m_pGraph->GetViewMatrix());
 	m_shader.SetProjMatrix(&m_pGraph->GetProjMatrix());
 	m_shader.SetLight(&m_pGraph->GetLight());

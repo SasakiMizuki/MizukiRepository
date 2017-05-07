@@ -150,6 +150,7 @@ CGameScene* CGameScene::Create(CGraphics* pGraph)
 			SAFE_DELETE(m_pScene);
 		}
 	}
+	m_shader.Load(_T("../data/shader/Toon.fx"));
 	m_pGraph = pGraph;
 	return m_pScene;
 }
@@ -165,7 +166,7 @@ bool CGameScene::Initialize(CGraphics* pGraph)
 	//-------- ゲーム用オブジェクトの初期化
 	InitObj();
 
-	m_shader.Load(_T("../data/shader/Toon.fx"));
+	//m_shader.Load(_T("../data/shader/Toon.fx"));
 	return true;
 }
 
