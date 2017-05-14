@@ -15,14 +15,16 @@ d:\github\mizukirepository\directxbase\directxbase\window.cpp(331): error C2065:
 d:\github\mizukirepository\directxbase\directxbase\window.cpp(331): error C2065: 'GWL_WNDPROC': 定義されていない識別子です。
 d:\github\mizukirepository\directxbase\directxbase\window.cpp(331): warning C4311: '型キャスト': ポインターを 'WNDPROC' から 'LONG' へ切り詰めます。
 d:\github\mizukirepository\directxbase\directxbase\window.cpp(331): warning C4302: '型キャスト': 'WNDPROC' から 'LONG' へ切り詰めます。
-d:\github\mizukirepository\directxbase\directxbase\window.cpp(331): error C2660: 'SetWindowLongW': 関数に 2 個の引数を指定できません。
+d:\github\mizukirepository\directxbase\directxbase\window.cpp(331): error C2660: 'SetWindowLongA': 関数に 2 個の引数を指定できません。
 d:\github\mizukirepository\directxbase\directxbase\window.cpp(433): warning C4244: 'return': 'WPARAM' から 'int' への変換です。データが失われる可能性があります。
   TreeManager.cpp
   Tree.cpp
   Sword.cpp
   Sky.cpp
+  Shader.cpp
   SceneManager.cpp
   SceneBase.cpp
+  RenderTarget.cpp
   PlayerHP.cpp
   Player.cpp
   Particle.cpp
@@ -34,11 +36,11 @@ d:\github\mizukirepository\directxbase\directxbase\window.cpp(433): warning C424
   Main.cpp
   Land.cpp
   Jintai.cpp
+  コードを生成中...
+  コンパイル中...
   Input.cpp
 d:\github\mizukirepository\directxbase\directxbase\input.cpp(58): error C2065: 'GWL_HINSTANCE': 定義されていない識別子です。
   HierarMesh.cpp
-  コードを生成中...
-  コンパイル中...
   Graphics.cpp
   GameWnd.cpp
   GameScene.cpp
