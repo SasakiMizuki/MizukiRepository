@@ -1,0 +1,3 @@
+﻿  main.cpp
+d:\hal(個人)\4年\gq41(高度)\01_2d衝突判定\2d_concavity(課題用)\2d_concavity\main.cpp(223): warning C4244: '初期化中': 'LONG' から 'float' への変換です。データが失われる可能性があります。
+  2D_CONCAVITY.vcxproj -> D:\HAL(個人)\4年\GQ41(高度)\01_2D衝突判定\2D_CONCAVITY(課題用)\Debug\2D_CONCAVITY.exe

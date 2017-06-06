@@ -1,0 +1,149 @@
+//=======================================================================================
+//
+//	  メッシュ クラス
+//
+//=======================================================================================
+#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_NON_CONFORMING_SWPRINTFS
+#include <stdio.h>
+#include "define.h"
+
+#include "Mesh.h"
+#include "Graphics.h"
+
+//---------------------------------------------------------------------------------------
+// コンストラクタ
+//---------------------------------------------------------------------------------------
+CMesh::CMesh()
+{
+	m_pD3DMesh = NULL;
+	m_dwNumMaterial = 0;
+	m_pMaterial = NULL;
+	m_ppTexture = NULL;
+}
+
+//---------------------------------------------------------------------------------------
+// デストラクタ
+//---------------------------------------------------------------------------------------
+CMesh::~CMesh()
+{
+	Finalize();
+}
+
+//---------------------------------------------------------------------------------------
+// メッシュ初期化
+//---------------------------------------------------------------------------------------
+bool CMesh::Initialize(LPCTSTR pszFName)
+{
+	TCHAR			szMsg[MAX_PATH + 32];
+	TCHAR			szDir[_MAX_DIR];
+	TCHAR			szCurrentDir[_MAX_PATH];
+
+	LPD3DXBUFFER	pD3DXMtrlBuffer = NULL;
+
+	// フォルダ名を抽出
+	_tsplitpath(pszFName, NULL, szDir, NULL, NULL);
+
+	// Ｘファイルからメッシュデータを読み込む
+	if (FAILED(D3DXLoadMeshFromX(pszFName, D3DXMESH_SYSTEMMEM, CGraphics::GetDevice(),
+		NULL, &pD3DXMtrlBuffer, NULL, &m_dwNumMaterial, &m_pD3DMesh))) {
+		_stprintf(szMsg, _T("Xファイル(%s)の読み込みに失敗しました。"), pszFName);
+		MessageBox(NULL, szMsg, NULL, MB_OK);
+		return false;
+	}
+
+	// 法線が無い場合は強制的に追加
+	if ((m_pD3DMesh->GetFVF() & D3DFVF_NORMAL) == 0) {
+		LPD3DXMESH pMeshTmp = m_pD3DMesh;
+		pMeshTmp->CloneMeshFVF(pMeshTmp->GetOptions(), pMeshTmp->GetFVF() | D3DFVF_NORMAL,
+			CGraphics::GetDevice(), &m_pD3DMesh);
+		SAFE_RELEASE(pMeshTmp);
+		D3DXComputeNormals(m_pD3DMesh, NULL);
+	}
+
+	// カレントディレクトリを変更
+	if (szDir[0]) {
+		GetCurrentDirectory(_MAX_PATH, szCurrentDir);
+		SetCurrentDirectory(szDir);
+	}
+
+	// マテリアル読み込み
+	D3DXMATERIAL* pD3DMaterials = (D3DXMATERIAL*)pD3DXMtrlBuffer->GetBufferPointer();
+	m_pMaterial = new D3DMATERIAL9[m_dwNumMaterial];
+	m_ppTexture = new LPDIRECT3DTEXTURE9[m_dwNumMaterial];
+	for (DWORD i = 0; i < m_dwNumMaterial; i++) { 
+		m_pMaterial[i] = pD3DMaterials[i].MatD3D;
+		m_pMaterial[i].Ambient = m_pMaterial[i].Diffuse;
+		m_ppTexture[i] = NULL;
+		if (pD3DMaterials[i].pTextureFilename && pD3DMaterials[i].pTextureFilename[0]) {
+			// テクスチャファイルを読み込む
+			if (FAILED(D3DXCreateTextureFromFileA(CGraphics::GetDevice(),
+				pD3DMaterials[i].pTextureFilename, &m_ppTexture[i]))) {
+				_stprintf(szMsg, _T("テクスチャ(%hs)の読み込みに失敗しました。"),
+					pD3DMaterials[i].pTextureFilename);
+				MessageBox(NULL, szMsg, NULL, MB_OK);
+			}
+		}
+	}
+
+	// カレントディレクトリを元に戻す
+	if (szDir[0])
+		SetCurrentDirectory(szCurrentDir);
+
+	pD3DXMtrlBuffer->Release();
+
+	return true;
+}
+
+//---------------------------------------------------------------------------------------
+// メッシュ解放
+//---------------------------------------------------------------------------------------
+void CMesh::Finalize()
+{
+	// テクスチャ オブジェクトを解放
+	if (m_ppTexture) {
+		for (DWORD i = 0; i < m_dwNumMaterial; i++) {
+			SAFE_RELEASE(m_ppTexture[i]);
+		}
+		SAFE_DELETE_ARRAY(m_ppTexture);
+	}
+	SAFE_DELETE_ARRAY(m_pMaterial);
+
+	SAFE_RELEASE(m_pD3DMesh);	// メッシュ オブジェクトを解放
+}
+
+//---------------------------------------------------------------------------------------
+// メッシュ描画
+//---------------------------------------------------------------------------------------
+void CMesh::Draw(D3DXMATRIX& world, CShader* pShader)
+{
+	// シェーダによる描画
+	UINT uPass;
+	if (pShader && (uPass = pShader->Begin()) > 0) {
+		pShader->SetWorldMatrix(&world);
+		for (UINT u = 0; u < uPass; ++u) {
+			pShader->BeginPass(u);
+			for (DWORD i = 0; i < m_dwNumMaterial; ++i) {
+				pShader->SetMaterial(&m_pMaterial[i]);
+				pShader->SetTexture(m_ppTexture[i]);
+				pShader->Commit();
+				m_pD3DMesh->DrawSubset(i);
+			}
+			pShader->EndPass();
+		}
+		pShader->End();
+		return;
+	}
+	// 固定機能パイプラインによる描画
+	CGraphics::GetDevice()->SetTransform(D3DTS_WORLD, &world);
+
+	for (DWORD i = 0; i < m_dwNumMaterial; i++) {
+		CGraphics::GetDevice()->SetMaterial(&m_pMaterial[i]);
+		CGraphics::GetDevice()->SetTexture(0, m_ppTexture[i]);
+		m_pD3DMesh->DrawSubset(i);
+	}
+}
+
+//=======================================================================================
+//	End of File
+//=======================================================================================
