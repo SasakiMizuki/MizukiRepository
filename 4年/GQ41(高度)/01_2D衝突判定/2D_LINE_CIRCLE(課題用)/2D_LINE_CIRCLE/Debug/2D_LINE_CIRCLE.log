@@ -1,0 +1,4 @@
+﻿  main.cpp
+d:\hal(個人)\4年\gq41(高度)\01_2d衝突判定\2d_line_circle(課題用)\2d_line_circle\main.cpp(197): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+d:\hal(個人)\4年\gq41(高度)\01_2d衝突判定\2d_line_circle(課題用)\2d_line_circle\main.cpp(198): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+  2D_LINE_CIRCLE.vcxproj -> D:\HAL(個人)\4年\GQ41(高度)\01_2D衝突判定\2D_LINE_CIRCLE(課題用)\Debug\2D_LINE_CIRCLE.exe

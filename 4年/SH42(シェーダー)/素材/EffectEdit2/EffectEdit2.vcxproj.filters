@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Common\DXUT.cpp">
+      <Filter>Common Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\DXUTenum.cpp">
+      <Filter>Common Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\dxutgui.cpp">
+      <Filter>Common Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\DXUTmisc.cpp">
+      <Filter>Common Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\DXUTSettingsDlg.cpp">
+      <Filter>Common Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UIElements.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectDoc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectEdit2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ErrorsView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OptionsView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TextView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Common\dxstdafx.h">
+      <Filter>Common Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\DXUT.h">
+      <Filter>Common Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\dxutgui.h">
+      <Filter>Common Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\DXUTenum.h">
+      <Filter>Common Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\DXUTSettingsDlg.h">
+      <Filter>Common Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\DXUTmisc.h">
+      <Filter>Common Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectDoc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectEdit2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ErrorsView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OptionsView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UIElements.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="arrow.x">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="directx.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="EffectDoc.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="help.txt">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Toolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UIElement.fx">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Common Files">
+      <UniqueIdentifier>{bcea81cc-ec00-41af-a2e0-a3f9f7572796}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{5b8dac2d-b1b4-4394-9c1f-cc269d984590}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{a022419d-6415-427c-a0f1-a0922fe0ddcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{e0c07d7a-4fbe-4745-afb5-ffaa677ae123}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="EffectEdit2.manifest">
+      <Filter>Resource Files</Filter>
+    </Manifest>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="EffectEdit2.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

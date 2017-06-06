@@ -1,0 +1,9 @@
+#ConfigFile Ver1.00
+
+@BGColor,20,20,20
+
+@LayerPreset,cloth,0,0,0,0,1,0,0,0,0
+@LayerPreset,sitab,1,0,0,0,1,1,0,0,0
+@LayerPreset,sitap,1,1,0,0,1,1,1,0,0
+@LayerPreset,shose,1,1,1,0,1,1,1,1,0
+@LayerPreset,megane,0,0,0,0,1,1,1,1,1
