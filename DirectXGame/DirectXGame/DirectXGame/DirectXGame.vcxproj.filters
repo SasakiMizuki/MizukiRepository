@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\Base">
+      <UniqueIdentifier>{69b421b1-332c-4c19-a31c-c09035483f53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameMain">
+      <UniqueIdentifier>{e9ec80c8-c953-4689-9558-20d72b48eac3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Base">
+      <UniqueIdentifier>{ae787344-9712-45b0-87cd-f142ecc364b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameMain">
+      <UniqueIdentifier>{19331af6-bdfe-4856-b044-aab7a23521c9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\Billboard.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\Debug.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\C2DObj.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\C3DObj.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\Camera.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\Enemy.cpp">
+      <Filter>ソース ファイル\GameMain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\Fade.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\Fire.cpp">
+      <Filter>ソース ファイル\GameMain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\GameScene.cpp">
+      <Filter>ソース ファイル\GameMain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\Input.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\GameWnd.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\Graphics.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\HierarMesh.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\HitCheck.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\Jintai.cpp">
+      <Filter>ソース ファイル\GameMain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\Land.cpp">
+      <Filter>ソース ファイル\GameMain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\ObjectBase.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\ObjectManager.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\Particle.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\Main.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\Mesh.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\MeshObj.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\MyHierarchy.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\PlayerHP.cpp">
+      <Filter>ソース ファイル\GameMain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\Player.cpp">
+      <Filter>ソース ファイル\GameMain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\Shader.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\RenderTarget.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\SceneBase.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\SceneManager.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\Sky.cpp">
+      <Filter>ソース ファイル\GameMain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\Sword.cpp">
+      <Filter>ソース ファイル\GameMain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\TreeManager.cpp">
+      <Filter>ソース ファイル\GameMain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\Tree.cpp">
+      <Filter>ソース ファイル\GameMain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\DirectXBase\DirectXBase\Window.cpp">
+      <Filter>ソース ファイル\Base</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\Billboard.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\define.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\C2DObj.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\C3DObj.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\Camera.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\Debug.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\Enemy.h">
+      <Filter>ヘッダー ファイル\GameMain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\Fade.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\Fire.h">
+      <Filter>ヘッダー ファイル\GameMain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\Input.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\GameWnd.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\Graphics.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\HierarMesh.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\HitCheck.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\Jintai.h">
+      <Filter>ヘッダー ファイル\GameMain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\Land.h">
+      <Filter>ヘッダー ファイル\GameMain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\ObjectManager.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\Particle.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\Mesh.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\MeshObj.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\MyHierarchy.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\ObjectBase.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\PlayerHP.h">
+      <Filter>ヘッダー ファイル\GameMain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\Player.h">
+      <Filter>ヘッダー ファイル\GameMain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\Shader.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\RenderTarget.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\SceneBase.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\SceneManager.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\Sky.h">
+      <Filter>ヘッダー ファイル\GameMain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\Sword.h">
+      <Filter>ヘッダー ファイル\GameMain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\TreeManager.h">
+      <Filter>ヘッダー ファイル\GameMain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\Tree.h">
+      <Filter>ヘッダー ファイル\GameMain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\Window.h">
+      <Filter>ヘッダー ファイル\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\DirectXBase\DirectXBase\GameScene.h">
+      <Filter>ヘッダー ファイル\GameMain</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -204,38 +204,39 @@ void CGameScene::Render()
 	m_pGraph->SwapBuffer();		// バックバッファ入替
 }
 
-////---------------------------------------------------------------------------------------
-//// ゲームメイン処理（メインループからコールされる）
-////---------------------------------------------------------------------------------------
-//void CGameScene::Update()
-//{
-//	++m_dwTick;
-//
-//	// 入力更新
-//	CInput::Update();
-//
-//
-//	//----- ここにゲーム本体処理
-//		UpdateObj();
-//
-//		/*if (CInput::GetKeyPress(DIK_F1)) {
-//			m_pPlayer->ChangeHP(-1000);
-//		}
-//		if (CInput::GetKeyPress(DIK_F2)) {
-//			m_pEnemy->ChangeHP(-1000);
-//		}
-//
-//		if (!m_bSceneChange && (m_pPlayer->GetHP() <= 0.0f || m_pEnemy->GetHP() <= 0.0f)){
-//			m_bSceneChange = true;
-//			m_pFade->Start(FADEOUT);
-//		}
-//		if (m_bSceneChange && !m_pFade->GetDoingFade() && m_pEnemy->GetHP() <= 0.0f) {
-//			CSceneManager::Instance()->ChangeScene(Scene_End);
-//		} else if (m_bSceneChange && !m_pFade->GetDoingFade() && m_pPlayer->GetHP() <= 0.0f){
-//			CSceneManager::Instance()->ChangeScene(Scene_GameOver);	
-//		}*/
-//}
-//
+//---------------------------------------------------------------------------------------
+// ゲームメイン処理（メインループからコールされる）
+//---------------------------------------------------------------------------------------
+void CGameScene::Update()
+{
+	++m_dwTick;
+
+	// 入力更新
+	CInput::Update();
+
+
+	//----- ここにゲーム本体処理
+	//m_shader.
+	UpdateObj();
+
+		/*if (CInput::GetKeyPress(DIK_F1)) {
+			m_pPlayer->ChangeHP(-1000);
+		}
+		if (CInput::GetKeyPress(DIK_F2)) {
+			m_pEnemy->ChangeHP(-1000);
+		}
+
+		if (!m_bSceneChange && (m_pPlayer->GetHP() <= 0.0f || m_pEnemy->GetHP() <= 0.0f)){
+			m_bSceneChange = true;
+			m_pFade->Start(FADEOUT);
+		}
+		if (m_bSceneChange && !m_pFade->GetDoingFade() && m_pEnemy->GetHP() <= 0.0f) {
+			CSceneManager::Instance()->ChangeScene(Scene_End);
+		} else if (m_bSceneChange && !m_pFade->GetDoingFade() && m_pPlayer->GetHP() <= 0.0f){
+			CSceneManager::Instance()->ChangeScene(Scene_GameOver);	
+		}*/
+}
+
 ////---------------------------------------------------------------------------------------
 //// 描画処理（CGraphics::Render() からコールされる）
 ////---------------------------------------------------------------------------------------
