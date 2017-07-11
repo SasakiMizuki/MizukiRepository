@@ -5,6 +5,7 @@
 #include "Input.h"
 #include "define.h"
 #include "SceneBase.h"
+#include "Debug.h"
 
 // 固定カメラ位置
 #define CAMERA_POSX		0.0f
@@ -74,6 +75,7 @@ void CCamera::PostUpdate()
 	if (m_fTime < 0.0f) {
 		m_fTime = 0.0f;
 	}
+	// カメラ視点切り替え
 	if (CInput::GetKeyTrigger(DIK_2) || CInput::GetKeyTrigger(DIK_NUMPAD2)) {
 		m_cp = CP_FIXED;
 		m_fTime = 1.0f;
@@ -86,9 +88,11 @@ void CCamera::PostUpdate()
 		m_cp = CP_TPVIEW;
 		m_fTime = 1.0f;
 	}
+	// プレイヤーの背後に移動する
 	if (m_pPlayer) {
 		float Distance = sqrtf(power(m_pEnemy->GetWorld()._43 - m_pPlayer->GetWorld()._43) + power(m_pEnemy->GetWorld()._41 - m_pPlayer->GetWorld()._41));
 		switch (m_cp) {
+		// 1人称
 		case CP_FPVIEW:
 			D3DXVec3TransformCoord(&m_pos2,
 				&D3DXVECTOR3(0.0f, 160.0f, 55.0f),
@@ -100,6 +104,7 @@ void CCamera::PostUpdate()
 				&D3DXVECTOR3(0.0f, 1.0f, 0.0f),
 				&m_pPlayer->GetWorld());
 			break;
+		// 3人称
 		case CP_TPVIEW:
 			D3DXVec3TransformCoord(&m_pos2,
 				&D3DXVECTOR3(0.0f, 360.0f, -380.0f),
@@ -115,6 +120,7 @@ void CCamera::PostUpdate()
 				&D3DXVECTOR3(0.0f, 1.0f, 0.0f),
 				&m_pPlayer->GetWorld());
 			break;
+		// 固定カメラ
 		case CP_FIXED:
 		default:
 			m_at2 = m_pPlayer->GetPos();

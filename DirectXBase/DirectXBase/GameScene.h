@@ -45,6 +45,8 @@ public:
 	void UpdateObj();
 	DWORD GetTick();
 
+	void Update();
+
 private:
 	bool Initialize(CGraphics* pGraph);
 	void Finalize();

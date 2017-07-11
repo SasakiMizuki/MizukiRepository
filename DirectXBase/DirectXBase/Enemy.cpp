@@ -78,7 +78,7 @@ void CEnemy::Update()
 	if (m_pPlayer && m_nMotion == ENEMY_STUND) {
 		m_fSpeed = 0.0f;
 		m_angle.y = (float)D3DXToDegree(atan2((m_pPlayer->GetWorld()._41 - m_world._41), (m_pPlayer->GetWorld()._43 - m_world._43)));
-		nMoveCount--;
+		//nMoveCount--;
 	}
 
 

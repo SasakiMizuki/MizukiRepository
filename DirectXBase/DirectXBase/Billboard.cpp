@@ -1,27 +1,32 @@
 #include "Billboard.h"
 
 
-
+//コンストラクタ
 CBillboard::CBillboard(CSceneBase* pScene):
 C2DObj(pScene){
 	m_uID = ID_BILLBOARD;
 }
 
-
+// デストラクタ
 CBillboard::~CBillboard() {
 }
 
+// 初期化
 void CBillboard::Init() {
+	// テクスチャの取得
 	D3DXCreateTextureFromFile(CGraphics::GetDevice(), (LPCSTR)m_pszTexName, &m_pTexture);
 
+	// カメラの検索
 	m_pCamera = (CCamera*)Find(ID_CAMERA);
 
+	// サイズ初期化
 	m_Size = D3DXVECTOR2(0.0f,0.0f);
 
 	MakeVertex();
 	//MakeVertex();
 }
 
+// 終了処理
 void CBillboard::Fin() {
 	if (m_pTexture) {
 		m_pTexture->Release();
@@ -33,6 +38,7 @@ void CBillboard::Fin() {
 	}
 }
 
+// 更新処理
 void CBillboard::Update() {
 	D3DXMATRIX mtxScale;
 
@@ -57,6 +63,7 @@ void CBillboard::Update() {
 		&m_world, &mtxScale);*/
 }
 
+// 描画
 void CBillboard::Draw() {
 	D3DXMATRIX mtxTranslate;
 	// ライト無効

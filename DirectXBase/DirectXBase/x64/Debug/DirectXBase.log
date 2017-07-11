@@ -1,56 +1,32 @@
 ﻿  Window.cpp
-d:\github\mizukirepository\directxbase\directxbase\window.cpp(62): error C2065: 'DWL_DLGPROC': 定義されていない識別子です。
-d:\github\mizukirepository\directxbase\directxbase\window.cpp(78): warning C4244: '引数': 'WPARAM' から 'UINT' への変換です。データが失われる可能性があります。
-d:\github\mizukirepository\directxbase\directxbase\window.cpp(113): warning C4244: '引数': 'WPARAM' から 'UINT' への変換です。データが失われる可能性があります。
-d:\github\mizukirepository\directxbase\directxbase\window.cpp(275): warning C4312: '型キャスト': 'UINT' からより大きいサイズの 'HMENU' へ変換します。
-d:\github\mizukirepository\directxbase\directxbase\window.cpp(306): error C2065: 'DWL_DLGPROC': 定義されていない識別子です。
+d:\github\mizukirepository\directxbase\directxbase\window.cpp(63): error C2065: 'DWL_DLGPROC': 定義されていない識別子です。
+d:\github\mizukirepository\directxbase\directxbase\window.cpp(79): warning C4244: '引数': 'WPARAM' から 'UINT' への変換です。データが失われる可能性があります。
+d:\github\mizukirepository\directxbase\directxbase\window.cpp(114): warning C4244: '引数': 'WPARAM' から 'UINT' への変換です。データが失われる可能性があります。
+d:\github\mizukirepository\directxbase\directxbase\window.cpp(276): warning C4312: '型キャスト': 'UINT' からより大きいサイズの 'HMENU' へ変換します。
 d:\github\mizukirepository\directxbase\directxbase\window.cpp(307): error C2065: 'DWL_DLGPROC': 定義されていない識別子です。
-d:\github\mizukirepository\directxbase\directxbase\window.cpp(307): error C2065: 'GWL_WNDPROC': 定義されていない識別子です。
-d:\github\mizukirepository\directxbase\directxbase\window.cpp(314): warning C4311: '型キャスト': ポインターを 'LRESULT (__cdecl *)(HWND,UINT,WPARAM,LPARAM)' から 'LONG' へ切り詰めます。
-d:\github\mizukirepository\directxbase\directxbase\window.cpp(314): warning C4302: '型キャスト': 'LRESULT (__cdecl *)(HWND,UINT,WPARAM,LPARAM)' から 'LONG' へ切り詰めます。
+d:\github\mizukirepository\directxbase\directxbase\window.cpp(308): error C2065: 'DWL_DLGPROC': 定義されていない識別子です。
+d:\github\mizukirepository\directxbase\directxbase\window.cpp(308): error C2065: 'GWL_WNDPROC': 定義されていない識別子です。
 d:\github\mizukirepository\directxbase\directxbase\window.cpp(315): warning C4311: '型キャスト': ポインターを 'LRESULT (__cdecl *)(HWND,UINT,WPARAM,LPARAM)' から 'LONG' へ切り詰めます。
 d:\github\mizukirepository\directxbase\directxbase\window.cpp(315): warning C4302: '型キャスト': 'LRESULT (__cdecl *)(HWND,UINT,WPARAM,LPARAM)' から 'LONG' へ切り詰めます。
-d:\github\mizukirepository\directxbase\directxbase\window.cpp(315): warning C4312: '型キャスト': 'LONG' からより大きいサイズの 'WNDPROC' へ変換します。
-d:\github\mizukirepository\directxbase\directxbase\window.cpp(331): error C2065: 'DWL_DLGPROC': 定義されていない識別子です。
-d:\github\mizukirepository\directxbase\directxbase\window.cpp(331): error C2065: 'GWL_WNDPROC': 定義されていない識別子です。
-d:\github\mizukirepository\directxbase\directxbase\window.cpp(331): warning C4311: '型キャスト': ポインターを 'WNDPROC' から 'LONG' へ切り詰めます。
-d:\github\mizukirepository\directxbase\directxbase\window.cpp(331): warning C4302: '型キャスト': 'WNDPROC' から 'LONG' へ切り詰めます。
-d:\github\mizukirepository\directxbase\directxbase\window.cpp(331): error C2660: 'SetWindowLongA': 関数に 2 個の引数を指定できません。
-d:\github\mizukirepository\directxbase\directxbase\window.cpp(433): warning C4244: 'return': 'WPARAM' から 'int' への変換です。データが失われる可能性があります。
-  TreeManager.cpp
-  Tree.cpp
-  Sword.cpp
-  Sky.cpp
-  Shader.cpp
-  SceneManager.cpp
-  SceneBase.cpp
-  RenderTarget.cpp
-  PlayerHP.cpp
-  Player.cpp
-  Particle.cpp
-  ObjectManager.cpp
-  ObjectBase.cpp
-  MyHierarchy.cpp
-  MeshObj.cpp
-  Mesh.cpp
-  Main.cpp
-  Land.cpp
-  Jintai.cpp
-  コードを生成中...
-  コンパイル中...
+d:\github\mizukirepository\directxbase\directxbase\window.cpp(316): warning C4311: '型キャスト': ポインターを 'LRESULT (__cdecl *)(HWND,UINT,WPARAM,LPARAM)' から 'LONG' へ切り詰めます。
+d:\github\mizukirepository\directxbase\directxbase\window.cpp(316): warning C4302: '型キャスト': 'LRESULT (__cdecl *)(HWND,UINT,WPARAM,LPARAM)' から 'LONG' へ切り詰めます。
+d:\github\mizukirepository\directxbase\directxbase\window.cpp(316): warning C4312: '型キャスト': 'LONG' からより大きいサイズの 'WNDPROC' へ変換します。
+d:\github\mizukirepository\directxbase\directxbase\window.cpp(332): error C2065: 'DWL_DLGPROC': 定義されていない識別子です。
+d:\github\mizukirepository\directxbase\directxbase\window.cpp(332): error C2065: 'GWL_WNDPROC': 定義されていない識別子です。
+d:\github\mizukirepository\directxbase\directxbase\window.cpp(332): warning C4311: '型キャスト': ポインターを 'WNDPROC' から 'LONG' へ切り詰めます。
+d:\github\mizukirepository\directxbase\directxbase\window.cpp(332): warning C4302: '型キャスト': 'WNDPROC' から 'LONG' へ切り詰めます。
+d:\github\mizukirepository\directxbase\directxbase\window.cpp(332): error C2660: 'SetWindowLongA': 関数に 2 個の引数を指定できません。
+d:\github\mizukirepository\directxbase\directxbase\window.cpp(434): warning C4244: 'return': 'WPARAM' から 'int' への変換です。データが失われる可能性があります。
   Input.cpp
 d:\github\mizukirepository\directxbase\directxbase\input.cpp(58): error C2065: 'GWL_HINSTANCE': 定義されていない識別子です。
-  HierarMesh.cpp
-  Graphics.cpp
-  GameWnd.cpp
-  GameScene.cpp
-  Fire.cpp
-  FadeButton.cpp
-  Fade.cpp
-  Enemy.cpp
-  Debug.cpp
+  コードを生成中...
+  コンパイル中...
   Camera.cpp
-  C3DObj.cpp
-  C2DObj.cpp
-  Billboard.cpp
+  コードを生成中...
+  コンパイル中...
+  RenderTarget.cpp
+d:\github\mizukirepository\directxbase\directxbase\rendertarget.cpp : fatal error C1041: プログラム データベース 'D:\GitHub\MizukiRepository\DirectXBase\DirectXBase\x64\Debug\vc140.pdb' を開けません。複数の CL.EXE が同じ .PDB ファイルに書き込む場合、/FS を使用してください。
+  Main.cpp
+  Jintai.cpp
+  GameWnd.cpp
   コードを生成中...
