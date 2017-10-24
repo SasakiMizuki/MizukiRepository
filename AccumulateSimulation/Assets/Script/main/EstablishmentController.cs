@@ -87,14 +87,13 @@ public class EstablishmentController : ObjectBase {
 	/// 確率計算
 	/// </summary>
 	public void Calculation() {
-		m_EstablishA = float.Parse(m_EstablishAText.text);	// InputFieldから取得
-		m_EstablishB = float.Parse(m_EstablishBText.text);	// 同上
-		float sum = m_EstablishA + m_EstablishB;            // 計算
-		m_EstablishA = m_EstablishA / sum;
-		m_EstablishB = m_EstablishB / sum;
+		m_EstablishA = int.Parse(m_EstablishAText.text);
+		m_EstablishB = int.Parse(m_EstablishBText.text);
+		float sum = m_EstablishA + m_EstablishB;
+		m_EstablishAnswerA = m_EstablishA / sum;
+		m_EstablishAnswerB = m_EstablishB / sum;
 	}
 
-	// 確率計算
 	public void ConfirmCalution() {
 		int FlagNum = 0;
 		for(int i = 0; i < MAX_WIDTH; i ++) {
@@ -121,7 +120,7 @@ public class EstablishmentController : ObjectBase {
 		float sum = m_EstablishAnswerA + m_EstablishAnswerB;
 		m_ConfirmEstablishA = m_EstablishAnswerA / sum;
 		//Debug.Log("FlagNum / MAX_WIDTH" + (float)FlagNum / MAX_WIDTH);
-		//Debug.Log("m_ConfirmEstablishA" + m_ConfirmEstablishA);
+		Debug.Log("m_ConfirmEstablishA" + m_ConfirmEstablishA);
 	}
 
     // 実行
@@ -131,9 +130,9 @@ public class EstablishmentController : ObjectBase {
 		m_LoopCounter = 0;
 		bool Next = false;
 		float FromZeroToOne = Random.Range(0.0f, 1.0f);
-		ConfirmCalution();
-		if(m_ConfirmEstablishA > FromZeroToOne) {
-		//if(m_EstablishAnswerA < FromZeroToOne) {
+		//ConfirmCalution();
+		//if(m_ConfirmEstablishA > FromZeroToOne) {
+		if(m_EstablishAnswerA > FromZeroToOne) {
 				Next = true;
 		} else {
 			Next = false;
@@ -177,31 +176,21 @@ public class EstablishmentController : ObjectBase {
 		}
 	}
 
-	// 1回実行
-	public void OneTimeExecute() {
-		if(m_isExecute)
-			return;
-		Calculation();
-		m_LoadingText.enabled = true;
-		m_isExecute = true;
-		m_ExecuteNumber = 1;
-	}
-
-	// 100回実行
+    // 100回実行
 	public void HandredExecute() {
 		if(m_isExecute)
 			return;
-		Calculation();
+
 		m_LoadingText.enabled = true;
 		m_isExecute = true;
 		m_ExecuteNumber = 100;
 	}
 
-	// 10000回実行
+    // 10000回実行
 	public void TenThousandExecute() {
 		if(m_isExecute)
 			return;
-		Calculation();
+
 		m_LoadingText.enabled = true;
 		m_isExecute = true;
 		m_ExecuteNumber = 10000;
@@ -221,7 +210,6 @@ public class EstablishmentController : ObjectBase {
 	}
 
 	IEnumerator handredExecute() {
-		Calculation();
 		m_LoadingText.enabled = true;
 		yield return null;
 		for(int i = 0; i < 100; i++) {
@@ -231,7 +219,6 @@ public class EstablishmentController : ObjectBase {
 	}
 
 	IEnumerator tenThousandExecute() {
-		Calculation();
 		m_LoadingText.enabled = true;
 		yield return null;
 		for(int i = 0; i < 10000; i++) {
