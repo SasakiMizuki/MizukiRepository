@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 392}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -180,8 +180,8 @@ MonoBehaviour:
     y: 381
     width: 431
     height: 437
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -417,14 +417,14 @@ MonoBehaviour:
     width: 429
     height: 360
   m_SceneLighting: 1
-  lastFramingTime: 2706.961104197531
+  lastFramingTime: 8971.74362334554
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 300.6335, y: 248.57889, z: 0}
+    m_Target: {x: 218.65114, y: 79.29223, z: 0}
     speed: 2
-    m_Value: {x: 300.6335, y: 248.57889, z: 0}
+    m_Value: {x: 218.65114, y: 79.29223, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -451,9 +451,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 570.8847
+    m_Target: 274.95468
     speed: 2
-    m_Value: 570.8847
+    m_Value: 274.95468
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -518,9 +518,9 @@ MonoBehaviour:
     height: 525
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: dafbffff00000000
+    m_SelectedIDs: 76300000
+    m_LastClickedID: 12406
+    m_ExpandedIDs: 18aefeffd6aefeffa2affefff8b4feffb6b5feff82b6feff08b8feff92b8feff5eb9feffdafbffff000000000e26000080260000522d0000c42d0000ca3000003c310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -665,18 +665,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Script/Editor
+    - Assets/Script/main
   m_ViewMode: 1
   m_StartGridSize: 74
   m_LastFolders:
-  - Assets/Script/Editor
+  - Assets/Script/main
   m_LastFoldersGridSize: 74
   m_LastProjectPath: D:\GitHub\MizukiRepository\AccumulateSimulation
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 28250000
-    m_LastClickedID: 9512
+    m_SelectedIDs: 4a250000
+    m_LastClickedID: 9546
     m_ExpandedIDs: 00000000be2400000225000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -732,7 +732,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 3e1d00000e1c0000681c0000f8330000462f0000761c0000b23100009a1bfdffb4330000423700002a370000f631000078210000921c0000381e00001c67feffce24000020200000a63b00005c730000807600007685ffffa01c000056220000b81bf8ffa21f0000da300200842200009c9e0300b29e0300549e0300822200004625000088490000b61c0000e0fc0000de220000ce1f0000b01c0000fe1f0000644d0000f85400009c3d0000ac1e000044410000ca1c0000445b0000d2210000d8210000102200006c1c00002a1c0000221c0000323a0000d22200001222000002220000fe4800000a490000c227f9ff56c5f3ff60eaf2ff2c24f9ffbc28000070ebf1ff32770000362800001884e9ffdc280000ec7af6ff062d0000a42b0000e4350000783b000030300000ca2d00002a2c0000902900001e87feff14270000fa1d0000441e0000b41f0000d61d0000501f00009a1e0000061f0000a61e0000aa1e00004a23000052230000b21f0000f81d0000de8000007a2b0000062000000c210000ac200000282100001e510100ca500100121f0000001f000010570100389dfcffa2230000a62100008289fdff00000000242000009a9dfffff02400007c240000fcbdfefff0230000c42500004e57ffff361f0000ec210000f4230000ea270000524200000a2400008c1f0000961f0000a22700003e2400004024000044240000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

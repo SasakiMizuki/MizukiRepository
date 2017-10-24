@@ -11,27 +11,14 @@ public class testScript : ObjectBase {
 
 	}
 
-    //public override void Execute(float deltaTime) {
-    //    int a = 0;
-    //    while(true) {
-    //        a++;
-    //        if(a > 10) {
-    //            break;
-    //        }
-    //    }
-    //}
-
-    void Update() {
-        int a = 0;
-        while(true) {
-            a++;
-            if(a > 10) {
-                break;
-            }
+	public override void Execute(float deltaTime) {
+		transform.position += new Vector3(1,0,0);
+        if(Input.anyKeyDown) {
+            CSParticleManager.Instance.Play("test");
         }
-    }
+	}
 
-    public override void LateExecute(float deltaTime) {
+	public override void LateExecute(float deltaTime) {
 
 	}
 }
